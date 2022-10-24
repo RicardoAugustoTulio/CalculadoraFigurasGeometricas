@@ -54,8 +54,12 @@ public class CalculadoraAreaFigurasGeometricas {
 			figura.lerDados();
 			figura.calcularArea();
 			figura.mostrarResultado();
-
-			executar();
+			System.out.println("Recomeçando...");
+			try {
+		        Thread.sleep((long) (2500));
+		    } catch (InterruptedException e) {}
+			
+			executar();		
 		} catch (Exception exception) {
 			System.exit(0);
 		}
