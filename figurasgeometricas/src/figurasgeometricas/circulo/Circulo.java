@@ -7,8 +7,13 @@ public class Circulo extends FiguraGeometrica {
 	private double raio;
 
 	public void lerDados() {
-		System.out.println("Digite o raio:");
-		raio = lerTeclado.nextDouble();	
+		
+		try {
+			System.out.println("Digite o raio:");
+			raio = lerTeclado.nextDouble();
+		} catch (Exception e) {
+			System.err.println("O dado foi inserido de forma errada, tente usar \",\" no lugar de \".\"");
+		}
 	}
 
 	public void calcularArea() {

@@ -12,13 +12,13 @@ import figurasgeometricas.triangulo.Triangulo;
 
 public class CalculadoraAreaFigurasGeometricas {
 
-	private static final int CIRCULO = 1;
-	private static final int QUADRADO = 2;
-	private static final int RETANGULO = 3;
-	private static final int LOSANGO = 4;
-	private static final int TRIANGULO = 5;
+	private static final byte CIRCULO = 1;
+	private static final byte QUADRADO = 2;
+	private static final byte RETANGULO = 3;
+	private static final byte LOSANGO = 4;
+	private static final byte TRIANGULO = 5;
 
-	private HashMap<Integer, FiguraGeometrica> figurasOpcoes;
+	private HashMap<Byte, FiguraGeometrica> figurasOpcoes;
 
 	public CalculadoraAreaFigurasGeometricas() {
 		figurasOpcoes = new HashMap<>();
@@ -37,7 +37,7 @@ public class CalculadoraAreaFigurasGeometricas {
 
 		Scanner lerTeclado = new Scanner(System.in);
 
-		int escolhaDoUsuario = 0;
+		byte escolhaDoUsuario = 0;
 
 		System.out.println(CIRCULO + " - Circulo");
 		System.out.println(QUADRADO + " - Quadrado");
@@ -46,7 +46,7 @@ public class CalculadoraAreaFigurasGeometricas {
 		System.out.println(TRIANGULO + "- Triangulo");
 		System.out.println("9 - Sair");
 
-		escolhaDoUsuario = lerTeclado.nextInt();
+		escolhaDoUsuario = lerTeclado.nextByte();
 
 		try {
 			FiguraGeometrica figura = figurasOpcoes.get(escolhaDoUsuario);
@@ -56,7 +56,7 @@ public class CalculadoraAreaFigurasGeometricas {
 			figura.mostrarResultado();
 			System.out.println("Recomeçando...");
 			try {
-		        Thread.sleep((long) (2500));
+		        Thread.sleep((long) (2000));
 		    } catch (InterruptedException e) {}
 			
 			executar();		
